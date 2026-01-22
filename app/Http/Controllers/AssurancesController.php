@@ -35,4 +35,29 @@ class AssurancesController extends Controller
         return redirect()->route('assurances.index');
     }
 
+    // Formulaire d’édition
+    public function edit($id)
+    {
+        // Récupérer l'assurance par son ID
+        $assurance = assurances::findOrFail($id);
+
+        // Envoyer les données à la vue
+        return view('assurances.edit', compact('assurance'));
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        // Récupérer l'assurance par son ID
+        $assurance = assurances::findOrFail($id);
+
+        // Mettre à jour avec les nouvelles données
+        $assurance->update($request->all());
+
+        // Redirection vers la liste avec un message de succès
+        return redirect()->route('assurances.index')
+            ->with('success', 'Assurance mise à jour avec succès.');
+    }
+
+
 }

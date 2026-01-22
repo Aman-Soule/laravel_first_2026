@@ -40,6 +40,10 @@
                     @csrf
                     @method('DELETE')
                     <button type="submit">Supprimer</button>
+
+                    <a href="{{ route('assurances.edit', $assurance->id) }}" class="btn btn-warning">
+                        Modifier
+                    </a>
                 </form>
             </td>
         </tr>

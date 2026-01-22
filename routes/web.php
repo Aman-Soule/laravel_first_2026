@@ -26,3 +26,7 @@ Route::get('/assurances', [AssurancesController::class, 'index'])->name('assuran
 Route::get('/assurances/create', [AssurancesController::class, 'create'])->name('assurances.create');
 Route::post('/assurances', [AssurancesController::class, 'store'])->name('assurances.store');
 Route::delete('/assurances/{id}', [AssurancesController::class, 'destroy'])->name('assurances.destroy');
+
+
+Route::get('/assurances/{id}/edit', [AssurancesController::class, 'edit'])->name('assurances.edit');
+Route::put('/assurances/{id}', [AssurancesController::class, 'update'])->name('assurances.update');
