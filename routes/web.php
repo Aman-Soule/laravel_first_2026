@@ -30,3 +30,10 @@ Route::delete('/assurances/{id}', [AssurancesController::class, 'destroy'])->nam
 
 Route::get('/assurances/{id}/edit', [AssurancesController::class, 'edit'])->name('assurances.edit');
 Route::put('/assurances/{id}', [AssurancesController::class, 'update'])->name('assurances.update');
+
+Route::get("/type-assurance",[\App\Http\Controllers\TypeAssuranceController::class,'index'])->name('type-assurance');
+Route::get('/type/add', [\App\Http\Controllers\TypeAssuranceController::class,'create'])->name('type.add');
+Route::post('/typeStore', [\App\Http\Controllers\TypeAssuranceController::class,'store'])->name('type.store');
+Route::delete('deletType/{id}',[\App\Http\Controllers\TypeAssuranceController::class,'destroy'])->name('type.destroy');
+Route::get('/editAssurance/{id}',[\App\Http\Controllers\TypeAssuranceController::class,'edit'])->name('type.edit');
+Route::put('/updateAssurance',[\App\Http\Controllers\TypeAssuranceController::class,'update'])->name('type.update');

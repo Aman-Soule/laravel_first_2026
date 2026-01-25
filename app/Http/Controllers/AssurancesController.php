@@ -10,8 +10,8 @@ class AssurancesController extends Controller
     //Liste
     public function index()
     {
-        $assurances = assurances::all();
-        return view('assurances.index', compact('assurances'));
+        $assurances = assurances::orderBy('created_at','DESC')->paginate(5); //Model
+        return view('assurances.index', compact('assurances')); //View
     }
 
     // Formulaire d’ajout

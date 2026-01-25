@@ -38,6 +38,6 @@
 </head>
 <body>
 <h1>APP ASSURANCE PRO</h1>
-<a href="/assurances" class="btn-big">➡️ Voir la liste des assurances</a>
+<a href="{{route('assurances.index')}}" class="btn-big">➡️ Voir la liste des assurances</a>
 </body>
 </html>
