@@ -24,7 +24,7 @@ class TypeAssuranceController extends Controller
     public function create()
     {
         $typeassurance = new type_assurances();
-        return view('type.add',['type'=>$typeassurance]);
+        return view('type.add',['typeassurance'=>$typeassurance]);
     }
 
     /**
@@ -51,15 +51,22 @@ class TypeAssuranceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // Récupérer le type par son ID
+        $typeassurance = $this->show($id);
+        // Envoyer les données à la vue
+        return view('type.add',['typeassurance'=> $typeassurance]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $typeassurance = $this->show($request['id']);
+        $typeassurance->libelle = $request['libelle'];
+
+        $typeassurance->save();
+        return redirect('/type-assurance');
     }
 
     /**

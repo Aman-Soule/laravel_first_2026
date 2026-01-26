@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-4">
         <div>
-            <div class="card-header d-flex justify-content-between align-items-center">
+            <div class=" mb-5 card-header d-flex justify-content-between align-items-center">
                 <h3 class="mb-0">Liste des Types d'Assurance</h3>
                 <a class="btn btn-success" href="{{ route('type.add') }}">➕ Ajouter</a>
             </div>
@@ -13,6 +13,8 @@
                     <tr>
                         <th>Id</th>
                         <th>Libellé</th>
+                        <th>Date de création</th>
+                        <th>Date de mofication</th>
                         <th>Action(s)</th>
                     </tr>
                     </thead>
@@ -21,6 +23,8 @@
                         <tr>
                             <td>{{ $t->id }}</td>
                             <td>{{ $t->libelle }}</td>
+                            <td>{{$t->created_at}}</td>
+                            <td>{{$t->updated_at}}</td>
                             <td>
                                 <form action="{{ route('type.destroy', [$t->id]) }}" method="POST" class="d-inline">
                                     @csrf
