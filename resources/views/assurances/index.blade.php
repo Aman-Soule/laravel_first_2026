@@ -12,6 +12,7 @@
                 <th>Libellé</th>
                 <th>Montant</th>
                 <th>Bonus</th>
+                <th>Type de l'Assurance</th>
                 <th>Date d'ajout</th>
                 <th>Date de modification</th>
                 <th>Action</th>
@@ -24,6 +25,7 @@
                     <td>{{ $assurance->libelle }}</td>
                     <td>{{ $assurance->montant }} CFA</td>
                     <td>{{ $assurance->bonus }}</td>
+                    <td>{{$assurance->type->libelle}}</td>
                     <td>{{ $assurance->created_at }}</td>
                     <td>{{ $assurance->updated_at }}</td>
                     <td>

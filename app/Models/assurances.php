@@ -8,5 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class assurances extends Model
 {
     use HasFactory;
-    protected $fillable = ['libelle', 'montant', 'bonus'];
+
+    public function type()
+    {
+        return $this->belongsTo(type_assurances::class, 'type_assurance_id');
+    }
+
+    protected $fillable = ['libelle', 'montant', 'bonus', 'type_assurance_id'];
 }

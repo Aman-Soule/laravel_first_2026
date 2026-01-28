@@ -21,6 +21,16 @@
                 <input type="text" class="form-control" id="bonus" name="bonus" placeholder="Entrez le bonus">
             </div>
 
+            <label for="">Type d'assurance</label>
+
+            <div class="mb-3">
+                <select class="form-control" name="type">
+                    @foreach($types_assurances  as $t)
+                        <option value="{{$t->id}}">{{$t->libelle}}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <button type="submit" class="btn btn-success">Enregistrer</button>
             <a href="{{ route('assurances.index') }}" class="btn btn-secondary ms-2">Annuler</a>
         </form>
