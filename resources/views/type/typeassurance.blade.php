@@ -40,5 +40,8 @@
 
             </div>
         </div>
+        <div class="d-flex justify-content-center mt-3">
+            {{ $types->links('pagination::bootstrap-5') }}
+        </div>
     </div>
 @endsection
