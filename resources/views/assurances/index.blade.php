@@ -25,7 +25,7 @@
                     <td>{{ $assurance->libelle }}</td>
                     <td>{{ $assurance->montant }} CFA</td>
                     <td>{{ $assurance->bonus }}</td>
-                    <td>{{$assurance->type->libelle}}</td>
+                    <td>{{$assurance->type ? $assurance->type->libelle : '-'}}</td>
                     <td>{{ $assurance->created_at }}</td>
                     <td>{{ $assurance->updated_at }}</td>
                     <td>
