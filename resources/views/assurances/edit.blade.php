@@ -22,6 +22,18 @@
                 <input type="number" class="form-control" id="bonus" name="bonus" value="{{ $assurance->bonus }}">
             </div>
 
+            <!-- Liste déroulante des types -->
+            <div class="form-group">
+                <label for="type_assurance_id">Type d'assurance</label>
+                <select name="type_assurance_id" id="type_assurance_id" class="form-control">
+                    @foreach($types_assurances as $type)
+                        <option value="{{ $type->id }}"
+                            {{ $assurance->type_assurance_id == $type->id ? 'selected' : '' }}>
+                            {{ $type->libelle }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
             <button type="submit" class="btn btn-primary">Mettre à jour</button>
             <a href="{{ route('assurances.index') }}" class="btn btn-secondary ms-2">Annuler</a>
         </form>

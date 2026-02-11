@@ -52,9 +52,13 @@ class AssurancesController extends Controller
         // Récupérer l'assurance par son ID
         $assurance = assurances::findOrFail($id);
 
-        // Envoyer les données à la vue
-        return view('assurances.edit', compact('assurance'));
+        // Récupérer la liste des types d'assurance
+        $types_assurances = type_assurances::all();
+
+        // Envoyer les deux variables à la vue
+        return view('assurances.edit', compact('assurance', 'types_assurances'));
     }
+
 
 
     public function update(Request $request, $id)
